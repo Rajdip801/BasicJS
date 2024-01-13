@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=yes"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+    <style>
+        body{
+            padding: 0%;
+            margin: 0%;
+            background-color: black;
+        }
+        #but{
+           background-color: cadetblue;
+           padding: 0%;
+           border: 0;
+           margin: 0;
+           border-radius: 100%;
+           height: 100px;
+           width: 100px;
+           font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+           color:darkslategray;
+           position: relative;
+           left: 550px;
+           top: 200px;
+        }
+        #but:hover{
+            background-color: darkcyan;
+        }
+    </style>
+    <body onload="onload()">
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main>
+            <button type="button" id="but" onmouseover="run()" onclick="stop()">CLICK</button>
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            let z=1
+            run=()=>{
+                    a=Math.round(Math.random()*100)
+                    document.getElementById("but").style.left=a*a+"px"
+                    document.getElementById("but").style.top=a+(a*10)+"px"
+                    document.getElementById("but").style.right=a+a+"px"
+                    z=z+1
+                }
+                let clr=setInterval(run,100);
+                
+            onload=()=>{
+                alert("Welcome Player try to catch the ball by clicking it")
+            }   
+            stop=()=>{
+                clearInterval(clr)
+                if (z<10){
+                    alert("Eye of the tiger,Point->",z)
+                }
+                else if(z<20){
+                    alert("Not fast enough try again,Point->",z)
+                }
+                else{
+                    alert("Game Over,Point->",z)
+                }
+            } 
+            
+                
+        </script>
+    </body>
+</html>
